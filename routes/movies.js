@@ -65,18 +65,6 @@ router.get("/new",middleware.isLoggedIn,function(req,res){
    
 });
 
-// //SHOW - shows more info about movies
-
-// app.get("/movies/:id",function(req,res){
-//     Movie.findById(req.params.id,function(err,foundMovie){
-//       if(err){
-//           console.log(err);
-//       } else{
-//           res.render("show",{movies:foundMovie});
-//       }
-//     });
-// });
-
 
 //EDIT - edit movie info
 

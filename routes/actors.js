@@ -62,35 +62,6 @@ router.post("/",function(req,res){
     
 });    
 
-//   Movie.findById(req.params.id,function(err,movie){
-//      if(err){
-//          console.log(err);
-         
-//      }else{
-//             var name = req.body.name;
-//             var sex  = req.body.sex;
-//             var dateOfBirth =  req.body.dateOfBirth;
-//             var bio =  req.body.bio;
-            
-//             var newActor = {name:name, sex:sex, dateOfBirth:dateOfBirth, bio:bio};
-            
-//             Actor.create(newActor,function(err,newlyCreatedActor){
-//                 if(err){
-//                     console.log(err);
-//                 }else{
-//                     console.log(newlyCreatedActor);
-//                     newlyCreatedActor.save();
-//                     movie.cast.push(newlyCreatedActor);
-//                     movie.save();
-//                     res.redirect("movies/new");
-//                 }
-//             });
-            
-    
-//      }
-//   });
-  
-// });   
 
 
 module.exports =router;

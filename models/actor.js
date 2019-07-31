@@ -1,5 +1,4 @@
 var mongoose = require("mongoose");
-//var uniqueValidator = require('mongoose-unique-validator');
 
 //SCHEMA. SETUP
  var actorSchema = new mongoose.Schema({
@@ -11,5 +10,4 @@ var mongoose = require("mongoose");
     
  });
  
-// actorSchema.plugin(uniqueValidator)
 module.exports = mongoose.model("Actor",actorSchema);
