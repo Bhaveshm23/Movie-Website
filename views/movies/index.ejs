@@ -1,0 +1,49 @@
+<% include ../partials/header %>
+
+<div class="container">
+    <header class="jumbotron">
+        <div class="container">
+            <h1>Welcome to the Movie Website</h1>
+            <p>View our hand-picked movies from all over the world</p>
+            <p>
+                <a class="btn btn-primary btn-large" href="/movies/new">Add Movie</a>
+            </p>
+        </div>
+    </header>
+    
+          
+ <div class="table-responsive">  
+     
+     <table class="table table-bordered">
+      <tr>
+        <th scope="col">Poster</th>
+        <th scope="col">Movie Name</th> 
+        <th scope="col">Year</th>
+        <th scope="col">Plot of Movie</th>
+        <th scope="col">Cast</th>
+        <th scope="col">Edit</th>
+      </tr>
+       <% movies.forEach(function(movie){ %>
+    
+          <tr>
+           <td><img src="<%= movie.image %>" width="140px" height="200px"></td>     
+           <td> <h4></h4><%= movie.name %></h4></td>
+           <td><h4><%=movie.year%></h4></td>
+           <td><h4><%=movie.plot %></h4></td>
+           <td><h4><%=movie.cast%></h4></td>
+           <td>
+                    <a class="btn btn-xs btn-warning" href="/movies/<%= movie._id %>/edit">Edit</a>
+               
+          
+           </td>
+          </tr>
+         <% }); %>  
+</table>
+  
+         </div>
+
+    </div>
+
+</div>
+   
+<% include ../partials/footer %>

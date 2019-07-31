@@ -1,0 +1,39 @@
+<% include ../partials/header%>
+
+<div class="container">
+    <div class="row">
+        <h1 style="text-align:center;"> Edit <%=movies.name%></h1>
+        <div style="width:30%; margin:25px auto;">
+            <form action="/movies/<%=movies._id%>?_method=PUT" method="POST">
+                <label>Movie Name:</label>
+                <div class="form-group"> <!-- form group -> to add space in between form elements-->
+                  <input class="form-control" type="text" name="movies[name]" value="<%=movies.name %>">
+                </div>
+                <label>Year of Release:</label>
+                 <div class="form-group"> 
+                  <input class="form-control" type="number" name="movies[year]" value="<%= movies.year%>" min="1950" step="1">
+                </div>
+                <label>Plot:</label>
+                <div class="form-group">
+                    <input class="form-control" type="text" name="movies[plot]" value="<%=movies.plot %>">
+                </div>
+                <label>Poster:</label>
+                 <div class="form-group">
+                    <input class="form-control" type="text" name="movies[image]" value="<%=movies.image %>">
+                </div>
+                <label>Cast:</label>
+               <div class="form-group">
+                   <input class="form-control" type="text" name="movies[cast]" value="<%=movies.cast%>">
+               </div>
+               
+                <div class="form-group">
+                    <button class="btn btn-lg btn-primary btn-block">Submit</button>
+                </div>
+            </form>
+             <a href="/movies">Go Back</a>
+        </div>
+       
+    </div>
+</div>
+    
+<% include ../partials/footer%>

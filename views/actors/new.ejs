@@ -1,0 +1,77 @@
+<% include ../partials/header %>
+
+<div class="container">
+    <div class="row">
+                <h1 style="text-align:center;"> Add a New Movie</h1>
+                <div style="width:30%; margin:25px auto;">
+                    
+                    <form method="POST" id="actor-form" action="/movies/actor">
+                             <label>Actor Name:</label>
+                             <input class="form-control" type="text" id="actor-name" name="name" placeholder="Name" required><br />
+                            <label> Sex:</label>
+                            <input class=".radio-inline" type="radio"  id="sex" name="sex" value="male" required>Male
+                                 <input class=".radio-inline" type="radio"  id="sex" name="sex" value="female">Female
+                                 <input class=".radio-inline" type="radio"  id="sex" name="sex" value="other">Others<br />
+                           <label>Date of Birth:</label>
+                           <input type="date" class="form-control" id="dateOfBirth" value="2019-07-20" required><br />
+
+                            <label>Bio:</label> <input class="form-control" type="textarea" id="bio" name="bio" placeholder="Add bio here" required><br>
+                         <!--<a href="/movies"><button type="button" class="btn btn-success" id="insert-btn">Insert</button></a>-->
+                         <input type="submit" class="form-control btn btn-success">      
+                         <!--<a href="/movies"><button>Submit</button></a>-->
+                         </form>
+
+                    
+                    
+                    
+                </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+  
+//   $('#actor-form').on('submit',(e)=>{
+//         e.preventDefault();
+        
+//              var data = $('#actor-name').val();
+
+//      $.ajax({
+        
+//         url:'/movies/new,
+//          data:data,
+//          method='POST',
+         
+//          success: function(response){
+// //          $("#cast")[0].options.add( new Option(data,data));
+//   //    window.location.reload();
+// //          console.log(response);
+//     } 
+        
+
+        
+//   });
+  
+//   $('#insert-btn').on('click',(e)=>{
+//      e.preventDefault();
+//      var data = $('#actor-name').val();
+         
+
+     
+//      $.ajax({
+        
+//         url:'/movies/new',
+//          data:data,
+//          method='POST',
+         
+//          success: function(response){
+// //          $("#cast")[0].options.add( new Option(data,data));
+//       window.location.reload();
+// //          console.log(response);
+//     } 
+        
+    
+     
+//   });
+</script> 
+
+<% include ../partials/footer %>

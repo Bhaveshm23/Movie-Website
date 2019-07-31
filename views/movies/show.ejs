@@ -1,0 +1,28 @@
+<% include partials/header %>
+    <div class="ui main text container">
+   	    <div class="ui huge header"><%=movies.name%></div>
+        <div class="ui top attached segment">
+	        <div class="item">
+	           <img class="ui centered rounded image" src="<%= movies.image %>">
+	            <div class="content">
+	                <div class="meta">
+    	                <span><%= movies.year %></span>
+	                </div>
+            	     <div class="description">
+            	        <p><%=movies.plot%></p>
+                    </div>
+                    <a class="ui inverted big orange button"href="/blogs/<%=blog._id %>/edit">Edit</a>
+                    <form id="delete"action="/blogs/<%=blog._id %>?_method=DELETE"method="POST">
+                        <button class="ui inverted big red button">Delete</button>
+                    </form>
+                </div>
+  
+            </div>
+     </div>
+    </div>
+    
+
+
+<% include partials/footer %>
+
+
