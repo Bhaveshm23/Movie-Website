@@ -24,13 +24,61 @@
 
 
 ### Some screenshots of the website
+
+* The movie list is shown by the /index route
+```
+  router.get('/',function(req, res) {
+     res.redirect('/movies');
+ });
+```
+The index page is shown by code here [Index Page](https://github.com/Bhaveshm23/Movie-Website/blob/master/views/movies/index.ejs)
 * This is the main page of the website which shows list of movies along with the option to add a movie.
 ![Main Page](https://github.com/Bhaveshm23/Movie-Website/blob/master/MovieWebsite/main-page.JPG) 
 
 * This image shows the list of movies added by the user
 ![List of Movies](https://github.com/Bhaveshm23/Movie-Website/blob/master/MovieWebsite/list-of-movies.JPG)
  
-* The user needs to be loggedin/signedup to edit the movie.
+* Authentication routes
+```
+ //show register form
+router.get("/register",function(req, res) {
+    res.render("register");
+});
+
+//handle sign up logic
+
+router.post("/register",function(req, res) {
+   var newUser = new User({username:req.body.username});
+   console.log(newUser);
+   if(req.body.adminCode==="I am the best"){
+       newUser.isAdmin=true;
+   }
+   User.register(newUser,req.body.password,function(err,user){
+       if(err){
+           req.flash("error",err.message);
+           return res.redirect("register");
+       }
+       passport.authenticate("local")(req,res,function(){
+           req.flash("success","Welcome to Movies Website "+user.username);
+          res.redirect("/movies"); 
+       });
+   });
+});
+
+//login form
+router.get("/login",function(req, res) {
+   res.render("login"); 
+});
+//handling login logic
+router.post("/login",passport.authenticate("local",{
+        successRedirect:"/movies",
+        failureRedirect:"/login"
+    }),function(req, res,err) {
+             req.flash("error",err.message);
+        
+});
+```
+ The user needs to be loggedin/signedup to edit the movie.
 ![Login](https://github.com/Bhaveshm23/Movie-Website/blob/master/MovieWebsite/login-form.JPG)
 ![SignUp](https://github.com/Bhaveshm23/Movie-Website/blob/master/MovieWebsite/signup-form.JPG)
 
