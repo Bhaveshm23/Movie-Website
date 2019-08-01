@@ -22,3 +22,18 @@
 * The details of the cast are added to the database, while the name of the actor is added as an option in the select field to add the cast.
 
 ### Some screenshots of the website
+* This is the main page of the website which shows list of movies along with the option to add a movie.
+![Main Page](https://github.com/Bhaveshm23/Movie-Website/blob/master/MovieWebsite/main-page.JPG) 
+
+* This image shows the list of movies added by the user
+![List of Movies](https://github.com/Bhaveshm23/Movie-Website/blob/master/MovieWebsite/list-of-movies.JPG)
+ 
+* The user needs to be loggedin/signedup to edit the movie.
+![Login](https://github.com/Bhaveshm23/Movie-Website/blob/master/MovieWebsite/login-form.JPG)
+![SignUp](https://github.com/Bhaveshm23/Movie-Website/blob/master/MovieWebsite/signup-form.JPG)
+
+* When the user logs out 
+![Logout](https://github.com/Bhaveshm23/Movie-Website/blob/master/MovieWebsite/loggedout.JPG)
+
+* When clicked on add movie button the add movie page shows up
+![Add Movie](https://github.com/Bhaveshm23/Movie-Website/blob/master/MovieWebsite/add%20movie.JPG)
