@@ -39,8 +39,38 @@
 
  
   
- * On clicking the Add Actor button 'Add Actor Modal' opens up. On clicking submit the new actor adds up in the cast input in 'Add Actor Form'
+* On clicking the Add Actor button 'Add Actor Modal' opens up. On clicking submit the new actor adds up in the cast input in 'Add Actor Form'.
  ![Add Actor](https://github.com/Bhaveshm23/Movie-Website/blob/master/MovieWebsite/actor-modal.JPG)
- 
- * When the loggedin user click on add movie button the add movie page shows up
+
+
+* Actor added to the database
+![Actor added to database](https://github.com/Bhaveshm23/Movie-Website/blob/master/MovieWebsite/actor-added-to-db.JPG)
+
+
+* When the loggedin user click on add movie button the add movie page shows up.
   ![Add Movie](https://github.com/Bhaveshm23/Movie-Website/blob/master/MovieWebsite/add%20movie.JPG)
+
+
+* On clicking the save button the movie gets added to the list of movies.
+ ![Movie Added](https://github.com/Bhaveshm23/Movie-Website/blob/master/MovieWebsite/new-movie-added.JPG)
+
+
+ * Movie added to the database
+ ![Movie Added to database](https://github.com/Bhaveshm23/Movie-Website/blob/master/MovieWebsite/movie-added-to-db.JPG)
+ 
+ 
+ ### Edit the poster of movie (The Shawshank Redemption)
+ 
+ * On click edit button by the user who has added the movie, the edit page shows up
+ ![Edit Page](https://github.com/Bhaveshm23/Movie-Website/blob/master/MovieWebsite/edit-movie.JPG)
+ 
+ 
+ * On succesfully edit the flash appears on the screen showing 'Successfully Updated'
+ ![Successfully Updated](https://github.com/Bhaveshm23/Movie-Website/blob/master/MovieWebsite/successfully-updated-flash.JPG)
+ 
+ 
+ * The Edited poster of movie in the table
+ ![Edited Poster](https://github.com/Bhaveshm23/Movie-Website/blob/master/MovieWebsite/edit-movie-image.JPG)
+
+
+
