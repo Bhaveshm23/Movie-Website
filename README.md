@@ -35,5 +35,12 @@
 * When the user logs out 
 ![Logout](https://github.com/Bhaveshm23/Movie-Website/blob/master/MovieWebsite/loggedout.JPG)
 
-* When clicked on add movie button the add movie page shows up
-![Add Movie](https://github.com/Bhaveshm23/Movie-Website/blob/master/MovieWebsite/add%20movie.JPG)
+### Adding a new movie (The Shawshank Redemption)
+
+ 
+  
+ * On clicking the Add Actor button 'Add Actor Modal' opens up. On clicking submit the new actor adds up in the cast input in 'Add Actor Form'
+ ![Add Actor](https://github.com/Bhaveshm23/Movie-Website/blob/master/MovieWebsite/actor-modal.JPG)
+ 
+ * When the loggedin user click on add movie button the add movie page shows up
+  ![Add Movie](https://github.com/Bhaveshm23/Movie-Website/blob/master/MovieWebsite/add%20movie.JPG)
