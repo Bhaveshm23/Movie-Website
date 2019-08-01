@@ -21,6 +21,8 @@
 * On click add actor button a modal appears in front of user where the user enters the details of the cast in the movie.
 * The details of the cast are added to the database, while the name of the actor is added as an option in the select field to add the cast.
 
+
+
 ### Some screenshots of the website
 * This is the main page of the website which shows list of movies along with the option to add a movie.
 ![Main Page](https://github.com/Bhaveshm23/Movie-Website/blob/master/MovieWebsite/main-page.JPG) 
