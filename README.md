@@ -20,7 +20,43 @@
 * The add movie form allows the user to add movie and also add cast of movie.
 * On click add actor button a modal appears in front of user where the user enters the details of the cast in the movie.
 * The details of the cast are added to the database, while the name of the actor is added as an option in the select field to add the cast.
-
+* The website uses middlewares 
+  * To check the user is loggedin or not
+  ```
+      middlewareObj.isLoggedIn = function(req, res, next){
+       if(req.isAuthenticated()){
+           return next();
+       }
+       req.flash("error", "You need to be logged in to do that");
+       res.redirect("/login");
+   };
+  ```
+  * To check the movie ownership
+  ```
+       middlewareObj.checkMovieOwnership = function(req, res, next) {
+   if(req.isAuthenticated()){
+          Movie.findById(req.params.id, function(err, foundMovie){
+             if(err || !foundMovie){
+                 req.flash("error", "Movie not found");
+                 res.redirect("back");
+             }  else {
+                 console.log(req.user);
+                 console.log(req.author);
+                 // does user own the movie?
+              if(foundMovie.author.id.equals(req.user.id) || req.user.isAdmin) {
+                  next();
+              } else {
+                  req.flash("error", "You don't have permission to do that");
+                  res.redirect("back");
+              }
+             }
+          });
+      } else {
+          req.flash("error", "You need to be logged in to do that");
+          res.redirect("back");
+      }
+  };
+  ```
 
 
 ### Some screenshots of the website
