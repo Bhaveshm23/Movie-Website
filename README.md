@@ -71,8 +71,12 @@ The index page is shown by code here [Index Page](https://github.com/Bhaveshm23/
 * This is the main page of the website which shows list of movies along with the option to add a movie.
 ![Main Page](https://github.com/Bhaveshm23/Movie-Website/blob/master/MovieWebsite/main-page.JPG) 
 
+
+
 * This image shows the list of movies added by the user
 ![List of Movies](https://github.com/Bhaveshm23/Movie-Website/blob/master/MovieWebsite/list-of-movies.JPG)
+
+
  
 * Authentication routes
 ```
@@ -118,8 +122,12 @@ router.post("/login",passport.authenticate("local",{
 ![Login](https://github.com/Bhaveshm23/Movie-Website/blob/master/MovieWebsite/login-form.JPG)
 ![SignUp](https://github.com/Bhaveshm23/Movie-Website/blob/master/MovieWebsite/signup-form.JPG)
 
+
+
 * When the user logs out 
 ![Logout](https://github.com/Bhaveshm23/Movie-Website/blob/master/MovieWebsite/loggedout.JPG)
+
+
 
 ### Adding a new movie (The Shawshank Redemption)
 
@@ -181,13 +189,18 @@ router.post("/",function(req,res){
     
 });    
 ```
+
+
 The page showing modal is show here [Modal Page](https://github.com/Bhaveshm23/Movie-Website/blob/master/views/actor/new.ejs)
 On clicking the Add Actor button 'Add Actor Modal' opens up. On clicking submit the new actor adds up in the cast input in 'Add Actor Form'.
  ![Add Actor](https://github.com/Bhaveshm23/Movie-Website/blob/master/MovieWebsite/actor-modal.JPG)
 
 
+
 * Actor added to the database
 ![Actor added to database](https://github.com/Bhaveshm23/Movie-Website/blob/master/MovieWebsite/actor-added-to-db.JPG)
+
+
 
 * Add new movie route
 ```
@@ -209,12 +222,15 @@ router.get("/new",middleware.isLoggedIn,function(req,res){
   ![Add Movie](https://github.com/Bhaveshm23/Movie-Website/blob/master/MovieWebsite/add%20movie.JPG)
 
 
+
 * On clicking the save button the movie gets added to the list of movies.
  ![Movie Added](https://github.com/Bhaveshm23/Movie-Website/blob/master/MovieWebsite/new-movie-added.JPG)
+ 
 
 
  * Movie added to the database
  ![Movie Added to database](https://github.com/Bhaveshm23/Movie-Website/blob/master/MovieWebsite/movie-added-to-db.JPG)
+ 
  
  
  ### Edit the poster of movie (The Shawshank Redemption)
@@ -248,14 +264,20 @@ router.put('/:id',middleware.checkMovieOwnership,function(req,res){
    });
 });
  ```
+ 
+ 
  The edit page is shown here [Edit Page](https://github.com/Bhaveshm23/Movie-Website/blob/master/views/movies/edit.ejs)
+ 
  
   On click edit button by the user who has added the movie, the edit page shows up
  ![Edit Page](https://github.com/Bhaveshm23/Movie-Website/blob/master/MovieWebsite/edit-movie.JPG)
  
  
+ 
  * On succesfully edit the flash appears on the screen showing 'Successfully Updated'
  ![Successfully Updated](https://github.com/Bhaveshm23/Movie-Website/blob/master/MovieWebsite/successfully-updated-flash.JPG)
+ 
+ 
  
  
  * The Edited poster of movie in the table
