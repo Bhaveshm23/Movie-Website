@@ -88,8 +88,65 @@ router.post("/login",passport.authenticate("local",{
 ### Adding a new movie (The Shawshank Redemption)
 
  
+* Adding a new actor route
+```
+ router.get('/new',function(req, res) {
+
+    
+   res.render('actors/new');
+    
+});
+
+router.post("/",function(req,res){
   
-* On clicking the Add Actor button 'Add Actor Modal' opens up. On clicking submit the new actor adds up in the cast input in 'Add Actor Form'.
+            var name = req.body.name;
+            var sex  = req.body.sex;
+            var dateOfBirth = req.body.dateOfBirth;
+            var bio =  req.body.bio;
+            
+            
+          Actor.findOne({name:req.body.name},function(err,foundSameName){
+              if(err){
+                  console.log(err); 
+              }else{
+                  console.log("found same name");
+              Actor.findOne({dateOfBirth:req.body.dateOfBirth},function(err,foundSameDate){
+                  
+                  if(err){
+                      
+                      console.log(err);
+                  }else if(foundSameDate){
+                      
+                      console.log("same date of birth");
+                      //Add to the database
+                      
+                      req.flash("error", "Actor Already added..");
+                    
+                  }else{
+                      //Add to databse
+                      var newActor = {name:name, sex:sex, dateOfBirth:dateOfBirth, bio:bio};
+                        console.log(newActor);
+                           
+                    
+                        Actor.create(newActor,function(err,newlyCreatedActor){
+                            if(err){
+                                console.log(err);
+                            }else{
+                                console.log(newActor);
+                                res.redirect("new");
+                            }
+                        });
+                  }
+                   
+                });
+             }
+              
+    });
+    
+});    
+```
+The page showing modal is show here [Modal Page](https://github.com/Bhaveshm23/Movie-Website/blob/master/views/movies/new.ejs)
+On clicking the Add Actor button 'Add Actor Modal' opens up. On clicking submit the new actor adds up in the cast input in 'Add Actor Form'.
  ![Add Actor](https://github.com/Bhaveshm23/Movie-Website/blob/master/MovieWebsite/actor-modal.JPG)
 
 
@@ -97,7 +154,7 @@ router.post("/login",passport.authenticate("local",{
 ![Actor added to database](https://github.com/Bhaveshm23/Movie-Website/blob/master/MovieWebsite/actor-added-to-db.JPG)
 
 
-* When the loggedin user click on add movie button the add movie page shows up.
+ When the loggedin user click on add movie button the add movie page shows up.
   ![Add Movie](https://github.com/Bhaveshm23/Movie-Website/blob/master/MovieWebsite/add%20movie.JPG)
 
 
@@ -111,7 +168,38 @@ router.post("/login",passport.authenticate("local",{
  
  ### Edit the poster of movie (The Shawshank Redemption)
  
- * On click edit button by the user who has added the movie, the edit page shows up
+ * Edit Route & Update Route
+ ```
+  //EDIT - edit movie info
+
+router.get('/:id/edit',middleware.checkMovieOwnership,function(req, res) {
+   Movie.findById(req.params.id,function(err,foundMovie){
+       if(err || !foundMovie){
+           req.flash("error","No movie found!");
+           res.redirect("back");
+       } else{
+           res.render("movies/edit",{movies:foundMovie});
+       }
+   }) ;
+});
+
+//UPDATE - update the movie info
+router.put('/:id',middleware.checkMovieOwnership,function(req,res){
+   Movie.findByIdAndUpdate(req.params.id,req.body.movies,function(err,updatedMovie){
+     
+     if(err){
+         req.flash("error", err.message);
+            res.redirect("back");
+     }else{
+         req.flash("success","Successfully Updated!");
+         res.redirect("/movies");
+     }
+   });
+});
+ ```
+ The edit page is shown here [Edit Page](https://github.com/Bhaveshm23/Movie-Website/blob/master/views/movies/edit.ejs)
+ 
+  On click edit button by the user who has added the movie, the edit page shows up
  ![Edit Page](https://github.com/Bhaveshm23/Movie-Website/blob/master/MovieWebsite/edit-movie.JPG)
  
  
