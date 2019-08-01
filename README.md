@@ -145,7 +145,7 @@ router.post("/",function(req,res){
     
 });    
 ```
-The page showing modal is show here [Modal Page](https://github.com/Bhaveshm23/Movie-Website/blob/master/views/movies/new.ejs)
+The page showing modal is show here [Modal Page](https://github.com/Bhaveshm23/Movie-Website/blob/master/views/actor/new.ejs)
 On clicking the Add Actor button 'Add Actor Modal' opens up. On clicking submit the new actor adds up in the cast input in 'Add Actor Form'.
  ![Add Actor](https://github.com/Bhaveshm23/Movie-Website/blob/master/MovieWebsite/actor-modal.JPG)
 
@@ -153,7 +153,22 @@ On clicking the Add Actor button 'Add Actor Modal' opens up. On clicking submit 
 * Actor added to the database
 ![Actor added to database](https://github.com/Bhaveshm23/Movie-Website/blob/master/MovieWebsite/actor-added-to-db.JPG)
 
+* Add new movie route
+```
+ //NEW - show form to add a new movie
 
+router.get("/new",middleware.isLoggedIn,function(req,res){
+    Actor.find({},function(err,foundActor){
+       if(err){
+           console.log(err);
+       }else{
+          
+            res.render("movies/new",{actors:foundActor});
+       }
+    });
+   
+});
+```
  When the loggedin user click on add movie button the add movie page shows up.
   ![Add Movie](https://github.com/Bhaveshm23/Movie-Website/blob/master/MovieWebsite/add%20movie.JPG)
 
